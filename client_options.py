@@ -11,4 +11,23 @@ def display_options():
         print("Select: ")
 
 
+def make_choice():
+    print("Please enter a valid choice")
+   
+    while(True):
+        try:
+             choice = int(input())
+             if(choice >=1 and choice <= 8):
+                break
+           
+             print("invalid option, try again 1-8")
 
+        except ValueError:
+            print("invalid option, try again")
+            continue
+
+
+
+
+    print("nice job")
+make_choice()
