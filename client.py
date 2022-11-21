@@ -5,22 +5,24 @@ import pickle
 
 HOST, PORT = "localhost", 9999
 
-
+while(True):
 # Create a socket (SOCK_STREAM means a TCP socket)
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-    # Connect to server and send data
-    sock.connect((HOST, PORT))
-    # sock.sendall(bytes(data + "\n", "utf-8"))
-    while(True):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+        # Connect to server and send data
+        sock.connect((HOST, PORT))
+        # sock.sendall(bytes(data + "\n", "utf-8"))
+        if(True):
         
-        client_options.display_options()
-        inputs = client_options.make_choice()
-        data = inputs
-        print("hello")
-        sock.send(pickle.dumps(data))
+            client_options.display_options()
+            inputs = client_options.make_choice()
+            data = inputs
+            print("hello")
+            sock.send(pickle.dumps(data))
 
-        # Receive data from the server and shut down
-        received = pickle.loads(sock.recv(4096))
+            # Receive data from the server and shut down
+            received = pickle.loads(sock.recv(4096))
+            for x in received:
+                print(received[x])
 
-#print("Sent:     {}".format(data))
-#rint("Received: {}".format(received))
+    #print("Sent:     {}".format(data))
+    #rint("Received: {}".format(received))
