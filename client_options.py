@@ -30,4 +30,3 @@ def make_choice():
 
 
     print("nice job")
-make_choice()

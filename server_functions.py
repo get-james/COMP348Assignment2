@@ -17,8 +17,7 @@ def file_reader():
 	for x in database:
 		print(database[x])
 
-file_reader()
-print("done haha")
+
 
 
 def find_customer(name):
@@ -46,3 +45,10 @@ def add_customer(name, fields):
 
 def send_report():
 	return database
+
+def data_reader(sent_list):
+	choice = sent_list[0]
+	if(choice == 1):
+		return find_customer(sent_list[1])
+	if(choice == 2):
+		add_customer(sent_list[1], sent_list[1:-1])
